@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmithLink Enterprises LLC</title>
+<meta name="description" content="SmithLink Enterprises LLC is a privately held company that builds and holds independent software ventures.">
+<meta property="og:title" content="SmithLink Enterprises LLC">
+<meta property="og:description" content="A privately held company building and holding independent software ventures.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://smithlink.llc/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;450;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#15171a;
+    --bg-2:#1c1f23;
+    --bg-3:#212529;
+    --line:rgba(255,255,255,.10);
+    --line-2:rgba(255,255,255,.18);
+    --silver:#d7dade;
+    --silver-dim:#9aa0a7;
+    --silver-faint:#6b7178;
+    --hi:#eef0f2;
+    --metal:linear-gradient(145deg,#f4f6f7 0%,#c3c8cd 26%,#8b9298 50%,#dfe3e6 74%,#a9aeb4 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--silver);
+    font-family:'Inter',system-ui,sans-serif;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:#3a4048;color:#fff}
+  a{color:inherit;text-decoration:none}
+
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(120% 60% at 50% -10%,rgba(215,218,222,.06),transparent 60%),
+      radial-gradient(80% 50% at 50% 120%,rgba(0,0,0,.5),transparent 70%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 26px}
+
+  .metal-rule{height:1px;border:0;background:var(--metal);opacity:.5;margin:0}
+
+  header{padding:26px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .kw{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;letter-spacing:.14em;
+    background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+  nav.top{display:flex;gap:28px;font-size:13.5px;font-weight:500;color:var(--silver-dim)}
+  nav.top a{transition:color .16s}
+  nav.top a:hover{color:var(--hi)}
+  @media(max-width:600px){nav.top{display:none}}
+
+  .hero{padding:70px 0 60px;text-align:center}
+  .crest{width:112px;height:112px;margin:0 auto 34px;display:block;border-radius:24px;box-shadow:0 8px 26px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.08)}.crest-sm{width:34px;height:34px;border-radius:9px;display:block;box-shadow:0 2px 8px rgba(0,0,0,.5)}
+  .eyebrow{font-family:'Spline Sans Mono',monospace;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--silver-faint);margin-bottom:22px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.4rem,6vw,4rem);
+    line-height:1.08;letter-spacing:.005em;color:var(--hi)}
+  h1 .thin{color:var(--silver-dim);font-weight:400}
+  .tagline{margin:30px auto 0;max-width:40ch;font-size:clamp(1rem,2.2vw,1.15rem);color:var(--silver-dim);line-height:1.6}
+  .pillars{display:flex;justify-content:center;flex-wrap:wrap;gap:0;margin-top:40px;
+    font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-faint)}
+  .pillars span{padding:0 20px;position:relative}
+  .pillars span+span::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:11px;background:var(--line-2)}
+  @media(max-width:560px){.pillars{gap:8px 0}.pillars span{padding:0 14px}}
+
+  section{padding:58px 0}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:34px}
+  .sec-kicker{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--silver-faint);white-space:nowrap}
+  .sec-head .metal-rule{flex:1}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .about h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:2rem;line-height:1.15;color:var(--hi);letter-spacing:.01em}
+  .about p{color:var(--silver-dim);font-size:15.5px;margin-top:14px}
+  .about p+p{margin-top:14px}
+  @media(max-width:680px){.about{grid-template-columns:1fr;gap:20px}}
+
+  .projects{display:grid;gap:16px}
+  .proj{
+    display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;
+    background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:24px 26px;
+    transition:border-color .18s,transform .18s,background .18s;
+  }
+  a.proj:hover{border-color:var(--line-2);transform:translateY(-2px);background:#242930}
+  .proj-badge{
+    width:56px;height:56px;border-radius:13px;display:grid;place-items:center;flex:none;
+    background:linear-gradient(155deg,#2a2f35,#15171a);border:1px solid var(--line-2);
+    font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;
+  }
+  .proj-badge span{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .proj-badge.img{padding:0;overflow:hidden;background:#15171a}
+  .proj-badge.img img{width:100%;height:100%;object-fit:cover;display:block}
+  .proj-body h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;color:var(--hi);letter-spacing:.01em;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .proj-body p{color:var(--silver-dim);font-size:14.5px;margin-top:5px;max-width:56ch}
+  .status{font-family:'Spline Sans Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+    padding:3px 9px;border-radius:100px;border:1px solid var(--line-2);color:var(--silver-dim);white-space:nowrap}
+  .status.active{color:#a9d6b0;border-color:rgba(120,190,135,.4)}
+  .status.plan{color:#c9c19a;border-color:rgba(200,185,140,.35)}
+  .proj-go{font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--silver-faint);white-space:nowrap}
+  a.proj:hover .proj-go{color:var(--silver)}
+  @media(max-width:600px){
+    .proj{grid-template-columns:auto 1fr;gap:16px;padding:20px}
+    .proj-go{display:none}
+  }
+
+  .company{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:44px;display:grid;grid-template-columns:1.15fr 1fr;gap:44px}
+  .company h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.85rem;color:var(--hi);letter-spacing:.01em;margin-bottom:14px}
+  .company p{color:var(--silver-dim);font-size:15px;max-width:42ch}
+  .facts{align-self:center}
+  .fact{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--line);font-size:14px}
+  .fact:first-child{border-top:0}
+  .fact dt{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--silver-faint)}
+  .fact dd{color:var(--silver);text-align:right;font-weight:500}
+  @media(max-width:680px){.company{grid-template-columns:1fr;gap:26px;padding:30px}}
+
+  .contact{text-align:center;padding:72px 0 30px}
+  .contact h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--hi);margin-bottom:8px}
+  .contact p{color:var(--silver-dim);max-width:38ch;margin:0 auto}
+  .mail{display:inline-block;margin-top:22px;font-family:'Spline Sans Mono',monospace;font-size:1.02rem;color:var(--hi);
+    padding-bottom:4px;border-bottom:1px solid;border-image:var(--metal) 1;transition:opacity .16s}
+  .mail:hover{opacity:.75}
+
+  footer{margin-top:46px;padding:30px 0 44px;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+  .foot .kw{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:15px;letter-spacing:.14em;
+    background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .foot-note{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.05em;color:var(--silver-faint)}
+  .foot-tag{width:100%;text-align:center;font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--silver-faint);margin-top:22px}
+
+  @media(prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="bar">
+      <a class="brand" href="#top">
+        <img class="crest-sm" src="assets/logo.jpg" alt="">
+        <span class="kw">SMITHLINK</span>
+      </a>
+      <nav class="top">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#company">Company</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <img class="crest" src="assets/logo.jpg" alt="SmithLink Enterprises LLC">
+    <h1>SmithLink Enterprises<br><span class="thin">LLC</span></h1>
+    <p class="tagline">A privately held company that builds, funds, and holds independent software ventures — one at a time, each to its own standard.</p>
+    <div class="pillars">
+      <span>Strong Foundation</span><span>Built to Connect</span><span>Growth Focused</span><span>Future Ready</span>
+    </div>
+  </section>
+
+  <hr class="metal-rule">
+
+  <section id="about">
+    <div class="sec-head"><span class="sec-kicker">01 — About</span><hr class="metal-rule"></div>
+    <div class="about">
+      <div class="reveal"><h2>A holding company for things worth building.</h2></div>
+      <div class="reveal">
+        <p>SmithLink Enterprises LLC is a United States limited liability company. We start ventures, build them to stand on their own, and hold them as independent operating companies.</p>
+        <p>Our approach is deliberate: focus on one project until it earns its independence, then move to the next. Each venture is built to last — a strong foundation first, growth second.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="metal-rule">
+
+  <section id="projects">
+    <div class="sec-head"><span class="sec-kicker">02 — Projects</span><hr class="metal-rule"></div>
+    <div class="projects">
+
+      <a class="proj reveal" href="#contact">
+        <div class="proj-badge img"><img src="assets/riverrat.jpg" alt="River Rat Guide app icon"></div>
+        <div class="proj-body">
+          <h3>River Rat Guide <span class="status active">Active development</span></h3>
+          <p>A native iOS navigation platform for anglers, paddlers, and boaters — offline-capable maps, ramps, water conditions, and routing for the inland and coastal waterways.</p>
+        </div>
+        <span class="proj-go">Site coming soon →</span>
+      </a>
+
+      <a class="proj reveal" href="#contact">
+        <div class="proj-badge"><span>WB</span></div>
+        <div class="proj-body">
+          <h3>WaterBoard <span class="status active">Active development</span></h3>
+          <p>A companion product for live water-level and conditions monitoring, built on the same trusted gage and forecast data as River Rat Guide.</p>
+        </div>
+        <span class="proj-go">Site coming soon →</span>
+      </a>
+
+      <div class="proj reveal">
+        <div class="proj-badge img"><img src="assets/moonlightrx.jpg" alt="MoonlightRX emblem"></div>
+        <div class="proj-body">
+          <h3>MoonlightRX <span class="status plan">Pre-planning</span></h3>
+          <p>An early-stage venture in development. Details to follow.</p>
+        </div>
+        <span class="proj-go"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="metal-rule">
+
+  <section id="company">
+    <div class="sec-head"><span class="sec-kicker">03 — Company</span><hr class="metal-rule"></div>
+    <div class="company">
+      <div class="reveal">
+        <h2>SmithLink Enterprises LLC</h2>
+        <p>A privately held United States limited liability company. SmithLink builds and holds independent software ventures, providing each with the foundation to operate on its own.</p>
+      </div>
+      <dl class="facts reveal">
+        <div class="fact"><dt>Legal entity</dt><dd>SmithLink Enterprises LLC</dd></div>
+        <div class="fact"><dt>Structure</dt><dd>Limited Liability Company</dd></div>
+        <div class="fact"><dt>Jurisdiction</dt><dd>United States</dd></div>
+        <div class="fact"><dt>Web</dt><dd>smithlink.llc</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="eyebrow">04 — Contact</div>
+    <h2>Get in touch</h2>
+    <p>For venture, partnership, or press inquiries, we read everything that comes in.</p>
+    <a class="mail" href="mailto:info@smithlink.llc">info@smithlink.llc</a>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <span class="kw">SMITHLINK</span>
+      <span class="foot-note">© 2026 SmithLink Enterprises LLC · All rights reserved</span>
+    </div>
+    <div class="foot-tag">Strong Foundation · Built to Connect · Growth Focused · Future Ready</div>
+  </footer>
+
+</div>
+
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+</script>
+</body>
+</html>
